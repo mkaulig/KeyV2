@@ -56,7 +56,7 @@ module iso_enter() {
   /* $dish_overdraw_width = 2.38125; */
 
   render() {
-    stabilized(vertical=true) {
+    stabilized(vertical=true,  type="rounded_cherry") {
       children();
     }
   }

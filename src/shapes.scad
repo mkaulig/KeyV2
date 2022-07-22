@@ -1,6 +1,7 @@
 include <constants.scad>
 include <shapes/ISO_enter.scad>
 include <shapes/sculpted_square.scad>
+include <shapes/sculpted_square_flat_back.scad>
 include <shapes/rounded_square.scad>
 include <shapes/square.scad>
 include <shapes/oblong.scad>
@@ -15,6 +16,8 @@ module key_shape(size, delta, progress = 0) {
     ISO_enter_shape(size, delta, progress);
   } else if ($key_shape_type == "sculpted_square") {
     sculpted_square_shape(size, delta, progress);
+  } else if ($key_shape_type == "flat_back_sculpted_square") {
+    sculpted_square_flat_back_shape(size, delta, progress);
   } else if ($key_shape_type == "rounded_square") {
     rounded_square_shape(size, delta, progress);
   } else if ($key_shape_type == "flat_sided_square") {

@@ -7,14 +7,49 @@
 
 include <./includes.scad>
 
-
 // example key
-dcs_row(5) legend("⇪", size=9) key();
+/* rounded_cherry(0.5) sa_row(3) key(); */
 
-// example row
-/* for (x = [0:1:4]) {
-  translate_u(0,-x) dcs_row(x) key();
-} */
+// space bar
+module spacebar_print(){
+$stem_support_type = "disable";
+flatty_row(5)
+inverted()
+u(6.25)
+rounded_cherry()
+stabilized(mm=50.617, type="rounded_cherry")
+obtheback()
+key();
+}
 
-// example layout
-/* preonic_default("dcs") key(); */
+module sa_backspace(){
+  $stem_support_type = "disable";
+sa_row(1)
+u(2)
+rounded_cherry()
+stabilized(mm=12, type="rounded_cherry")
+key();
+}
+
+module sa_key_print(row=3, width=1){
+$stem_support_type = "disable";
+flatty_row(row)
+u(width)
+cherry()
+backside() 
+key(); 
+}
+
+module iso_enter_1() {
+  sa_row(3) rounded_cherry() iso_enter() key();
+}
+
+
+// 
+
+//spacebar_print();
+
+sa_key_print(row=4, width=2);
+
+// sa_backspace();
+
